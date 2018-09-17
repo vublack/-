@@ -1,0 +1,636 @@
+<HTML class=" x-quirks"><HEAD><TITLE>OVRN-7) Чистые кредитовые Обороты</TITLE><LINK rel=stylesheet type=text/css href="/barsroot/Content/Themes/ExtJs/standart/css/ext-all.css"><LINK rel=stylesheet type=text/css href="/barsroot/Content/Themes/ExtJs/custom/css/app.css"><LINK rel=stylesheet type=text/css href="/barsroot/scripts/ExtJs/ext/src/ux/grid/css/RangeMenu.css"><LINK rel=stylesheet type=text/css href="/barsroot/scripts/ExtJs/ext/src/ux/grid/css/GridFilters.css"><LINK rel=stylesheet type=text/css href="/barsroot/scripts/ExtJs/ext/src/ux/css/ClearButton.css">
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/ext-all.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/FiltersFeature.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/menu/ListMenu.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/menu/RangeMenu.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/filter/Filter.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/filter/BooleanFilter.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/filter/DateFilter.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/filter/ListFilter.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/filter/NumericFilter.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/filter/StringFilter.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/grid/filter/DateTimeFilter.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/ClearButton.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/src/ux/PageSizePlugin.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/locale/ext-lang-ukr.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/overrides/ext-lang-ukr.js"></SCRIPT>
+
+<SCRIPT src="/barsroot/scripts/ExtJs/ext/overrides/overrides.js"></SCRIPT>
+
+<SCRIPT>
+    Ext.Loader.setConfig({
+        //не добавляет к каждому запросу рандомный параметр _dc
+        disableCaching: true,
+        enabled: true,
+        //все используемые src файлы нужно запихивать в бандл, при разработке чего-то нового ExtJs должен подтягивать файлы динамически из своей src папки
+        //чтобы посмотреть какие файлы extjs подтягивает динамически, можно в консоли браузера после загрузки приложения вбить Ext.Loader.history.map(Ext.Loader.getPath, Ext.Loader)
+        paths: {
+            'Ext': '/barsroot/scripts/ExtJs/ext/src'
+        }
+    });
+
+    //по умолчания таймаут extjs ajax запросов 30 секунд, ставим 20 минут
+    var defaultTimeout =  2400000;
+    Ext.Ajax.timeout = defaultTimeout;
+    Ext.override(Ext.data.proxy.Ajax, { timeout: defaultTimeout });
+</SCRIPT>
+
+<SCRIPT type=text/javascript src="/barsroot/Areas/Ndi/Scripts/ExtJsApp/utils/RefBookUtils.js?_dc=1536821748897" onload="null"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/barsroot/Areas/Ndi/Scripts/ExtJsApp/utils/SetStatmentUtils.js?_dc=1536821748897" onload="null"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/barsroot/Areas/Ndi/Scripts/ExtJsApp/view/refBook/CustomElements/RefCombobox.js?_dc=1536821748943" onload="null"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/barsroot/Areas/Ndi/Scripts/ExtJsApp/view/refBook/CustomElements/RefTextBox.js?_dc=1536821748943" onload="null"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/barsroot/Areas/Ndi/Scripts/ExtJsApp/view/refBook/CustomElements/RefCheckBox.js?_dc=1536821748943" onload="null"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/barsroot/Areas/Ndi/Scripts/ExtJsApp/controller/refBook/RefGrid.js?_dc=1536821748958" onload="null"></SCRIPT>
+
+<SCRIPT type=text/javascript src="/barsroot/Areas/Ndi/Scripts/ExtJsApp/model/refBook/RefGrid.js?_dc=1536821749030" onload="null"></SCRIPT>
+</HEAD>
+<BODY id=ext-gen1018 class=" x-body x-ie x-ie7p x-ie7 x-ie7m x-ie8m x-ie9m x-ie78 x-nbr x-nlg">--
+<META content=IE=edge http-equiv=X-UA-Compatible>
+<SCRIPT>
+
+    window.tableId = '1011240';
+    /* Table Modes List by META_ACCESS_CODES table
+    0 - Update + Insert + Delete
+    1 - Read Only
+    2 - Update
+    3 - Insert
+    4 - Delete
+    5 - Update + Insert
+    6 - Update + Delete
+    7 - Insert + Delete
+    */
+
+    window.tableMode = 'Delete';
+    window.conditions = '';
+    window.sqlProc = '';
+    window.base64jsonSqlProcParams = 'W3siTmFtZSI6Ik5EIiwiVHlwZSI6Ik4iLCJTRU1BTlRJQyI6Ilx1MDQyMFx1MDQzNVx1MDQ0NC5cdTA0MzRcdTA0M2VcdTA0MzN-XHUwNDFmXHUwNDFlXHUwNDE0XHUwNDA2XHUwNDA3IFx1MDQxNFx1MDQxZVx1MDQxMyIsIlZhbHVlIjo2NDY3MTU3MDF9LHsiTmFtZSI6IkFDQyIsIlR5cGUiOiJOIiwiU0VNQU5USUMiOiJBQ0MiLCJWYWx1ZSI6NTQ3MTMxMDF9XQ2';
+    window.CodeOper = '';
+    window.sParColumn = '';
+    window.isFuncOnly = 'False';
+    window.nativeTabelId = '';
+    window.nsiTableId = '1011242';
+    window.nsiFuncId = '5';
+    window.filterCode = '';
+    window.hasCallbackFunction = 'False';
+    window.getFiltersOnly = 'False';
+    window.baseCodeOper = "";
+    window.saveFilterLocal = "True";
+    window.Code = "";
+    window.Base64InsertDefParamsString = "";
+    window.base64ExternProcParams = "";
+    window.ExternelFuncOnly = "False";
+        
+</SCRIPT>
+
+<SCRIPT src="/barsroot/Areas/Ndi/Scripts/ReferenceGrid.js"></SCRIPT>
+ 
+<DIV class=x-panel-header-default-framed-top-frameInfo style="POSITION: absolute; TOP: -10000px"></DIV>
+<DIV id=ext-quicktips-tip class="x-tip x-layer x-tip-default x-border-box" style="DISPLAY: none">
+<DIV id=ext-quicktips-tip_header class="x-tip-header x-header x-header-horizontal x-docked x-unselectable x-tip-header-default x-horizontal x-tip-header-horizontal x-tip-header-default-horizontal x-top x-tip-header-top x-tip-header-default-top x-docked-top x-tip-header-docked-top x-tip-header-default-docked-top">
+<DIV id=ext-quicktips-tip_header-body class="x-header-body x-tip-header-body x-tip-header-body-default x-tip-header-body-horizontal x-tip-header-body-default-horizontal x-tip-header-body-top x-tip-header-body-default-top x-tip-header-body-docked-top x-tip-header-body-default-docked-top x-box-layout-ct x-tip-header-body-default-horizontal x-tip-header-body-default-top x-tip-header-body-default-docked-top">
+<DIV role=presentation id=ext-quicktips-tip_header-innerCt class="x-box-inner ">
+<DIV id=ext-quicktips-tip_header-targetEl class=x-box-target>
+<DIV id=ext-quicktips-tip_header_hd class="x-component x-header-text-container x-tip-header-text-container x-tip-header-text-container-default x-box-item x-component-default" unselectable="on"><SPAN id=ext-quicktips-tip_header_hd-textEl class="x-header-text x-tip-header-text x-tip-header-text-default" unselectable="on">&nbsp;</SPAN></DIV></DIV></DIV></DIV></DIV>
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=ext-quicktips-tip-frame1TL class="x-frame-tl x-tip-tl x-tip-default-tl"></TD>
+<TD role=presentation id=ext-quicktips-tip-frame1TC class="x-frame-tc x-tip-tc x-tip-default-tc"></TD>
+<TD role=presentation id=ext-quicktips-tip-frame1TR class="x-frame-tr x-tip-tr x-tip-default-tr"></TD></TR>
+<TR>
+<TD role=presentation id=ext-quicktips-tip-frame1ML class="x-frame-ml x-tip-ml x-tip-default-ml"></TD>
+<TD role=presentation id=ext-quicktips-tip-frame1MC class="x-frame-mc x-tip-mc x-tip-default-mc">
+<DIV style="POSITION: relative"></DIV>
+<DIV id=ext-quicktips-tip-body class="x-tip-body x-tip-body-default x-tip-body-default">
+<TABLE id=ext-quicktips-tip-outerCt class=x-table-plain>
+<TBODY>
+<TR>
+<TD id=ext-quicktips-tip-innerCt style="VERTICAL-ALIGN: top; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px">
+<DIV role=presentation id=ext-quicktips-tip-clearEl class=x-clear></DIV></TD></TR></TBODY></TABLE></DIV></TD>
+<TD role=presentation id=ext-quicktips-tip-frame1MR class="x-frame-mr x-tip-mr x-tip-default-mr"></TD></TR>
+<TR>
+<TD role=presentation id=ext-quicktips-tip-frame1BL class="x-frame-bl x-tip-bl x-tip-default-bl"></TD>
+<TD role=presentation id=ext-quicktips-tip-frame1BC class="x-frame-bc x-tip-bc x-tip-default-bc"></TD>
+<TD role=presentation id=ext-quicktips-tip-frame1BR class="x-frame-br x-tip-br x-tip-default-br"></TD></TR></TBODY></TABLE>
+<DIV id=ext-gen1024 class="x-tip-anchor x-tip-anchor-top"></DIV></DIV>
+<DIV role=presentation id=ext-gen1044 class=x-ie-shadow style="HEIGHT: 449px; WIDTH: 801px; RIGHT: auto; POSITION: ; LEFT: 545px; FILTER: progid:DXImageTransform.Microsoft.alpha(opacity=50) progid:DXImageTransform.Microsoft.Blur(pixelradius=4); Z-INDEX: 19000; DISPLAY: none; TOP: 240px"></DIV>
+<DIV tabIndex=-1 id=FilterWindow-1088 class="x-window x-layer x-window-default x-closable x-window-closable x-window-default-closable x-border-box x-resizable x-window-resizable x-window-default-resizable x-hide-offsets" style="HEIGHT: 450px; WIDTH: 800px; RIGHT: auto; LEFT: 550px; MARGIN: 0px; Z-INDEX: 19001; TOP: 243px">
+<DIV id=FilterWindow-1088_header class="x-window-header x-header x-header-horizontal x-header-draggable x-docked x-unselectable x-window-header-default x-horizontal x-window-header-horizontal x-window-header-default-horizontal x-top x-window-header-top x-window-header-default-top x-docked-top x-window-header-docked-top x-window-header-default-docked-top" style="WIDTH: 800px; RIGHT: auto; LEFT: 0px; TOP: 0px">
+<DIV role=presentation id=FilterWindow-1088_header-frame1TL class="x-frame-tl x-window-header-tl x-window-header-default-tl x-window-header-default-horizontal-tl x-window-header-default-top-tl x-window-header-default-docked-top-tl">
+<DIV role=presentation id=FilterWindow-1088_header-frame1TR class="x-frame-tr x-window-header-tr x-window-header-default-tr x-window-header-default-horizontal-tr x-window-header-default-top-tr x-window-header-default-docked-top-tr">
+<DIV role=presentation id=FilterWindow-1088_header-frame1TC class="x-frame-tc x-window-header-tc x-window-header-default-tc x-window-header-default-horizontal-tc x-window-header-default-top-tc x-window-header-default-docked-top-tc"></DIV></DIV></DIV>
+<DIV role=presentation id=FilterWindow-1088_header-frame1ML class="x-frame-ml x-window-header-ml x-window-header-default-ml x-window-header-default-horizontal-ml x-window-header-default-top-ml x-window-header-default-docked-top-ml">
+<DIV role=presentation id=FilterWindow-1088_header-frame1MR class="x-frame-mr x-window-header-mr x-window-header-default-mr x-window-header-default-horizontal-mr x-window-header-default-top-mr x-window-header-default-docked-top-mr">
+<DIV role=presentation id=FilterWindow-1088_header-frame1MC class="x-frame-mc x-window-header-mc x-window-header-default-mc x-window-header-default-horizontal-mc x-window-header-default-top-mc x-window-header-default-docked-top-mc" style="WIDTH: 790px">
+<DIV id=FilterWindow-1088_header-body class="x-header-body x-window-header-body x-window-header-body-default x-window-header-body-horizontal x-window-header-body-default-horizontal x-window-header-body-top x-window-header-body-default-top x-window-header-body-docked-top x-window-header-body-default-docked-top x-box-layout-ct x-window-header-body-default-horizontal x-window-header-body-default-top x-window-header-body-default-docked-top" style="WIDTH: 788px">
+<DIV role=presentation id=FilterWindow-1088_header-innerCt class="x-box-inner " style="HEIGHT: 16px; WIDTH: 788px">
+<DIV id=FilterWindow-1088_header-targetEl class=x-box-target style="WIDTH: 788px">
+<DIV id=FilterWindow-1088_header_hd class="x-component x-header-text-container x-window-header-text-container x-window-header-text-container-default x-box-item x-component-default" style="WIDTH: 771px; RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 0px" unselectable="on"><SPAN id=FilterWindow-1088_header_hd-textEl class="x-header-text x-window-header-text x-window-header-text-default" unselectable="on">Фільтр перед населенням таблиці</SPAN></DIV>
+<DIV id=tool-1092 class="x-tool x-box-item x-tool-default x-tool-after-title" style="HEIGHT: 15px; WIDTH: 15px; RIGHT: auto; LEFT: 773px; MARGIN: 0px; TOP: 0px"><IMG role=presentation id=tool-1092-toolEl class="x-tool-img x-tool-close" src="http://www.sencha.com/s.gif"></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV role=presentation id=FilterWindow-1088-frame1TL class="x-frame-tl x-window-tl x-window-default-tl x-window-default-closable-tl x-window-default-resizable-tl">
+<DIV role=presentation id=FilterWindow-1088-frame1TR class="x-frame-tr x-window-tr x-window-default-tr x-window-default-closable-tr x-window-default-resizable-tr">
+<DIV role=presentation id=FilterWindow-1088-frame1TC class="x-frame-tc x-window-tc x-window-default-tc x-window-default-closable-tc x-window-default-resizable-tc"></DIV></DIV></DIV>
+<DIV role=presentation id=FilterWindow-1088-frame1ML class="x-frame-ml x-window-ml x-window-default-ml x-window-default-closable-ml x-window-default-resizable-ml">
+<DIV role=presentation id=FilterWindow-1088-frame1MR class="x-frame-mr x-window-mr x-window-default-mr x-window-default-closable-mr x-window-default-resizable-mr">
+<DIV role=presentation id=FilterWindow-1088-frame1MC class="x-frame-mc x-window-mc x-window-default-mc x-window-default-closable-mc x-window-default-resizable-mc" style="HEIGHT: 440px; WIDTH: 790px">
+<DIV style="POSITION: relative"></DIV>
+<DIV id=FilterWindow-1088-body class="x-window-body x-window-body-default x-layout-fit x-closable x-window-body-closable x-window-body-default-closable x-resizable x-window-body-resizable x-window-body-default-resizable" style="HEIGHT: 391px; WIDTH: 790px; LEFT: 0px; TOP: 20px"></DIV></DIV></DIV></DIV>
+<DIV role=presentation id=FilterWindow-1088-frame1BL class="x-frame-bl x-window-bl x-window-default-bl x-window-default-closable-bl x-window-default-resizable-bl">
+<DIV role=presentation id=FilterWindow-1088-frame1BR class="x-frame-br x-window-br x-window-default-br x-window-default-closable-br x-window-default-resizable-br">
+<DIV role=presentation id=FilterWindow-1088-frame1BC class="x-frame-bc x-window-bc x-window-default-bc x-window-default-closable-bc x-window-default-resizable-bc"></DIV></DIV></DIV>
+<DIV id=toolbar-1089 class="x-toolbar x-docked x-toolbar-footer x-docked-bottom x-toolbar-docked-bottom x-toolbar-footer-docked-bottom x-box-layout-ct" style="WIDTH: 790px; RIGHT: auto; LEFT: 5px; TOP: 416px">
+<DIV role=presentation id=toolbar-1089-innerCt class="x-box-inner " style="HEIGHT: 22px; WIDTH: 784px">
+<DIV id=toolbar-1089-targetEl class=x-box-target style="WIDTH: 784px"><A role=button tabIndex=0 id=button-1090 class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-small x-icon-text-left x-btn-icon-text-left x-btn-default-small-icon-text-left x-over x-btn-over x-btn-default-small-over" hideFocus style="RIGHT: auto; LEFT: 488px; MARGIN: 0px; TOP: 0px" unselectable="on">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1090-frame1TL class="x-frame-tl x-btn-tl x-btn-default-small-tl x-btn-default-small-icon-text-left-tl x-btn-default-small-over-tl"></TD>
+<TD role=presentation id=button-1090-frame1TC class="x-frame-tc x-btn-tc x-btn-default-small-tc x-btn-default-small-icon-text-left-tc x-btn-default-small-over-tc"></TD>
+<TD role=presentation id=button-1090-frame1TR class="x-frame-tr x-btn-tr x-btn-default-small-tr x-btn-default-small-icon-text-left-tr x-btn-default-small-over-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1090-frame1ML class="x-frame-ml x-btn-ml x-btn-default-small-ml x-btn-default-small-icon-text-left-ml x-btn-default-small-over-ml"></TD>
+<TD role=presentation id=button-1090-frame1MC class="x-frame-mc x-btn-mc x-btn-default-small-mc x-btn-default-small-icon-text-left-mc x-btn-default-small-over-mc" style="WIDTH: 69px"><SPAN id=button-1090-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1090-btnEl class=x-btn-button><SPAN id=button-1090-btnInnerEl class="x-btn-inner x-btn-inner-center" style="WIDTH: 69px" unselectable="on">Далі</SPAN><SPAN role=img id=button-1090-btnIconEl class="x-btn-icon-el arrow_right " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1090-frame1MR class="x-frame-mr x-btn-mr x-btn-default-small-mr x-btn-default-small-icon-text-left-mr x-btn-default-small-over-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1090-frame1BL class="x-frame-bl x-btn-bl x-btn-default-small-bl x-btn-default-small-icon-text-left-bl x-btn-default-small-over-bl"></TD>
+<TD role=presentation id=button-1090-frame1BC class="x-frame-bc x-btn-bc x-btn-default-small-bc x-btn-default-small-icon-text-left-bc x-btn-default-small-over-bc"></TD>
+<TD role=presentation id=button-1090-frame1BR class="x-frame-br x-btn-br x-btn-default-small-br x-btn-default-small-icon-text-left-br x-btn-default-small-over-br"></TD></TR></TBODY></TABLE></A><A role=button tabIndex=0 id=button-1091 class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-small x-icon-text-left x-btn-icon-text-left x-btn-default-small-icon-text-left" hideFocus style="RIGHT: auto; LEFT: 569px; MARGIN: 0px; TOP: 0px" unselectable="on">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1091-frame1TL class="x-frame-tl x-btn-tl x-btn-default-small-tl x-btn-default-small-icon-text-left-tl"></TD>
+<TD role=presentation id=button-1091-frame1TC class="x-frame-tc x-btn-tc x-btn-default-small-tc x-btn-default-small-icon-text-left-tc"></TD>
+<TD role=presentation id=button-1091-frame1TR class="x-frame-tr x-btn-tr x-btn-default-small-tr x-btn-default-small-icon-text-left-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1091-frame1ML class="x-frame-ml x-btn-ml x-btn-default-small-ml x-btn-default-small-icon-text-left-ml"></TD>
+<TD role=presentation id=button-1091-frame1MC class="x-frame-mc x-btn-mc x-btn-default-small-mc x-btn-default-small-icon-text-left-mc"><SPAN id=button-1091-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1091-btnEl class=x-btn-button><SPAN id=button-1091-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">Відмінити</SPAN><SPAN role=img id=button-1091-btnIconEl class="x-btn-icon-el cancel " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1091-frame1MR class="x-frame-mr x-btn-mr x-btn-default-small-mr x-btn-default-small-icon-text-left-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1091-frame1BL class="x-frame-bl x-btn-bl x-btn-default-small-bl x-btn-default-small-icon-text-left-bl"></TD>
+<TD role=presentation id=button-1091-frame1BC class="x-frame-bc x-btn-bc x-btn-default-small-bc x-btn-default-small-icon-text-left-bc"></TD>
+<TD role=presentation id=button-1091-frame1BR class="x-frame-br x-btn-br x-btn-default-small-br x-btn-default-small-icon-text-left-br"></TD></TR></TBODY></TABLE></A><A role=button id=clareFilersInDialogId class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-small x-item-disabled x-disabled x-btn-disabled x-btn-default-small-disabled x-icon-text-left x-btn-icon-text-left x-btn-default-small-icon-text-left" hideFocus style="RIGHT: auto; LEFT: 653px; MARGIN: 0px; TOP: 0px" unselectable="on">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=clareFilersInDialogId-frame1TL class="x-frame-tl x-btn-tl x-btn-default-small-tl x-btn-default-small-disabled-tl x-btn-default-small-icon-text-left-tl"></TD>
+<TD role=presentation id=clareFilersInDialogId-frame1TC class="x-frame-tc x-btn-tc x-btn-default-small-tc x-btn-default-small-disabled-tc x-btn-default-small-icon-text-left-tc"></TD>
+<TD role=presentation id=clareFilersInDialogId-frame1TR class="x-frame-tr x-btn-tr x-btn-default-small-tr x-btn-default-small-disabled-tr x-btn-default-small-icon-text-left-tr"></TD></TR>
+<TR>
+<TD role=presentation id=clareFilersInDialogId-frame1ML class="x-frame-ml x-btn-ml x-btn-default-small-ml x-btn-default-small-disabled-ml x-btn-default-small-icon-text-left-ml"></TD>
+<TD role=presentation id=clareFilersInDialogId-frame1MC class="x-frame-mc x-btn-mc x-btn-default-small-mc x-btn-default-small-disabled-mc x-btn-default-small-icon-text-left-mc"><SPAN id=clareFilersInDialogId-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=clareFilersInDialogId-btnEl class=x-btn-button><SPAN id=clareFilersInDialogId-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">Скасувати фільтри</SPAN><SPAN role=img id=clareFilersInDialogId-btnIconEl class="x-btn-icon-el clear_filter " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=clareFilersInDialogId-frame1MR class="x-frame-mr x-btn-mr x-btn-default-small-mr x-btn-default-small-disabled-mr x-btn-default-small-icon-text-left-mr"></TD></TR>
+<TR>
+<TD role=presentation id=clareFilersInDialogId-frame1BL class="x-frame-bl x-btn-bl x-btn-default-small-bl x-btn-default-small-disabled-bl x-btn-default-small-icon-text-left-bl"></TD>
+<TD role=presentation id=clareFilersInDialogId-frame1BC class="x-frame-bc x-btn-bc x-btn-default-small-bc x-btn-default-small-disabled-bc x-btn-default-small-icon-text-left-bc"></TD>
+<TD role=presentation id=clareFilersInDialogId-frame1BR class="x-frame-br x-btn-br x-btn-default-small-br x-btn-default-small-disabled-br x-btn-default-small-icon-text-left-br"></TD></TR></TBODY></TABLE></A></DIV></DIV></DIV>
+<DIV id=FilterWindow-1088-north-handle class="x-resizable-handle x-resizable-handle-north x-window-handle x-window-handle-north x-unselectable" unselectable="on"></DIV>
+<DIV id=FilterWindow-1088-south-handle class="x-resizable-handle x-resizable-handle-south x-window-handle x-window-handle-south x-unselectable" unselectable="on"></DIV>
+<DIV id=FilterWindow-1088-east-handle class="x-resizable-handle x-resizable-handle-east x-window-handle x-window-handle-east x-unselectable" unselectable="on"></DIV>
+<DIV id=FilterWindow-1088-west-handle class="x-resizable-handle x-resizable-handle-west x-window-handle x-window-handle-west x-unselectable" unselectable="on"></DIV>
+<DIV id=FilterWindow-1088-northeast-handle class="x-resizable-handle x-resizable-handle-northeast x-window-handle x-window-handle-northeast x-unselectable" unselectable="on"></DIV>
+<DIV id=FilterWindow-1088-northwest-handle class="x-resizable-handle x-resizable-handle-northwest x-window-handle x-window-handle-northwest x-unselectable" unselectable="on"></DIV>
+<DIV id=FilterWindow-1088-southeast-handle class="x-resizable-handle x-resizable-handle-southeast x-window-handle x-window-handle-southeast x-unselectable" unselectable="on"></DIV>
+<DIV id=FilterWindow-1088-southwest-handle class="x-resizable-handle x-resizable-handle-southwest x-window-handle x-window-handle-southwest x-unselectable" unselectable="on"></DIV></DIV>
+<DIV role=presentation id=ext-gen1245 class=x-ie-shadow style="HEIGHT: 116px; WIDTH: 272px; RIGHT: auto; POSITION: ; LEFT: 809px; FILTER: progid:DXImageTransform.Microsoft.alpha(opacity=50) progid:DXImageTransform.Microsoft.Blur(pixelradius=4); Z-INDEX: 19010; DISPLAY: none; TOP: 406px"></DIV>
+<DIV tabIndex=-1 id=messagebox-1001 class="x-window x-message-box x-layer x-window-default x-closable x-window-closable x-window-default-closable x-border-box x-hide-offsets" style="HEIGHT: 117px; WIDTH: 271px; RIGHT: auto; LEFT: 814px; Z-INDEX: 19011; TOP: 409px">
+<DIV id=messagebox-1001_header class="x-window-header x-header x-header-horizontal x-header-draggable x-docked x-unselectable x-window-header-default x-horizontal x-window-header-horizontal x-window-header-default-horizontal x-top x-window-header-top x-window-header-default-top x-docked-top x-window-header-docked-top x-window-header-default-docked-top" style="WIDTH: 271px; RIGHT: auto; LEFT: 0px; TOP: 0px">
+<DIV role=presentation id=messagebox-1001_header-frame1TL class="x-frame-tl x-window-header-tl x-window-header-default-tl x-window-header-default-horizontal-tl x-window-header-default-top-tl x-window-header-default-docked-top-tl">
+<DIV role=presentation id=messagebox-1001_header-frame1TR class="x-frame-tr x-window-header-tr x-window-header-default-tr x-window-header-default-horizontal-tr x-window-header-default-top-tr x-window-header-default-docked-top-tr">
+<DIV role=presentation id=messagebox-1001_header-frame1TC class="x-frame-tc x-window-header-tc x-window-header-default-tc x-window-header-default-horizontal-tc x-window-header-default-top-tc x-window-header-default-docked-top-tc"></DIV></DIV></DIV>
+<DIV role=presentation id=messagebox-1001_header-frame1ML class="x-frame-ml x-window-header-ml x-window-header-default-ml x-window-header-default-horizontal-ml x-window-header-default-top-ml x-window-header-default-docked-top-ml">
+<DIV role=presentation id=messagebox-1001_header-frame1MR class="x-frame-mr x-window-header-mr x-window-header-default-mr x-window-header-default-horizontal-mr x-window-header-default-top-mr x-window-header-default-docked-top-mr">
+<DIV role=presentation id=messagebox-1001_header-frame1MC class="x-frame-mc x-window-header-mc x-window-header-default-mc x-window-header-default-horizontal-mc x-window-header-default-top-mc x-window-header-default-docked-top-mc" style="WIDTH: 261px">
+<DIV id=messagebox-1001_header-body class="x-header-body x-window-header-body x-window-header-body-default x-window-header-body-horizontal x-window-header-body-default-horizontal x-window-header-body-top x-window-header-body-default-top x-window-header-body-docked-top x-window-header-body-default-docked-top x-box-layout-ct x-window-header-body-default-horizontal x-window-header-body-default-top x-window-header-body-default-docked-top" style="WIDTH: 259px">
+<DIV role=presentation id=messagebox-1001_header-innerCt class="x-box-inner " style="HEIGHT: 16px; WIDTH: 259px">
+<DIV id=messagebox-1001_header-targetEl class=x-box-target style="WIDTH: 259px"><IMG id=messagebox-1001_header-iconEl class="x-window-header-icon x-header-icon save x-box-item x-window-header-icon-default x-window-header-icon-before-title" style="RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 0px" src="http://www.sencha.com/s.gif">
+<DIV id=messagebox-1001_header_hd class="x-component x-header-text-container x-window-header-text-container x-window-header-text-container-default x-box-item x-component-default" style="WIDTH: 241px; RIGHT: auto; LEFT: 18px; MARGIN: 0px; TOP: 0px" unselectable="on"><SPAN id=messagebox-1001_header_hd-textEl class="x-header-text x-window-header-text x-window-header-text-default" unselectable="on">&nbsp;</SPAN></DIV>
+<DIV id=tool-1095 class="x-tool x-box-item x-tool-default x-tool-after-title" style="HEIGHT: 15px; WIDTH: 15px; DISPLAY: none"><IMG role=presentation id=tool-1095-toolEl class="x-tool-img x-tool-close" src="http://www.sencha.com/s.gif"></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV role=presentation id=messagebox-1001-frame1TL class="x-frame-tl x-window-tl x-window-default-tl x-window-default-closable-tl">
+<DIV role=presentation id=messagebox-1001-frame1TR class="x-frame-tr x-window-tr x-window-default-tr x-window-default-closable-tr">
+<DIV role=presentation id=messagebox-1001-frame1TC class="x-frame-tc x-window-tc x-window-default-tc x-window-default-closable-tc"></DIV></DIV></DIV>
+<DIV role=presentation id=messagebox-1001-frame1ML class="x-frame-ml x-window-ml x-window-default-ml x-window-default-closable-ml">
+<DIV role=presentation id=messagebox-1001-frame1MR class="x-frame-mr x-window-mr x-window-default-mr x-window-default-closable-mr">
+<DIV role=presentation id=messagebox-1001-frame1MC class="x-frame-mc x-window-mc x-window-default-mc x-window-default-closable-mc" style="HEIGHT: 107px; WIDTH: 261px">
+<DIV style="POSITION: relative"></DIV>
+<DIV id=messagebox-1001-body class="x-window-body x-window-body-default x-box-layout-ct x-closable x-window-body-closable x-window-body-default-closable x-window-body-default x-window-body-default-closable" style="HEIGHT: 87px; WIDTH: 261px; LEFT: 0px; TOP: 20px">
+<DIV role=presentation id=messagebox-1001-innerCt class="x-box-inner " style="HEIGHT: 87px; WIDTH: 261px">
+<DIV id=messagebox-1001-targetEl class=x-box-target style="WIDTH: 261px">
+<DIV id=container-1004 class="x-container x-box-item x-window-item x-container-default x-box-layout-ct" style="OVERFLOW: hidden; RIGHT: auto; PADDING-BOTTOM: 10px; PADDING-TOP: 10px; PADDING-LEFT: 10px; LEFT: 0px; MARGIN: 0px; TOP: 0px; PADDING-RIGHT: 10px">
+<DIV role=presentation id=container-1004-innerCt class="x-box-inner " style="HEIGHT: 37px; WIDTH: 241px">
+<DIV id=container-1004-targetEl class=x-box-target style="WIDTH: 241px">
+<DIV id=component-1002 class="x-component x-box-item x-component-default" style="HEIGHT: 35px; WIDTH: 50px; DISPLAY: none"></DIV>
+<DIV id=container-1003 class="x-container x-box-item x-container-default" style="RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 0px">
+<TABLE id=container-1003-outerCt class=x-table-plain>
+<TBODY>
+<TR>
+<TD id=container-1003-innerCt style="VERTICAL-ALIGN: top; PADDING-BOTTOM: 0px; PADDING-TOP: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px">
+<TABLE id=messagebox-1001-displayfield class="x-field x-window-text x-table-plain x-form-item x-form-readonly x-form-type-text x-field-default x-anchor-form-item" style="TABLE-LAYOUT: auto" cellPadding=0>
+<TBODY>
+<TR role=presentation id=messagebox-1001-displayfield-inputRow class=x-form-item-input-row>
+<TD role=presentation id=messagebox-1001-displayfield-labelCell class=x-field-label-cell style="DISPLAY: none" vAlign=top width=105 halign="left"><LABEL id=messagebox-1001-displayfield-labelEl class="x-form-item-label x-unselectable x-form-item-label-left" style="WIDTH: 100px; MARGIN-RIGHT: 5px" for=messagebox-1001-displayfield-inputEl unselectable="on"></LABEL></TD>
+<TD role=presentation id=messagebox-1001-displayfield-bodyEl class="x-form-item-body x-form-display-field-body " colSpan=3>
+<DIV role=input id=messagebox-1001-displayfield-inputEl class=x-form-display-field aria-invalid=false data-errorqtip>Виконується оновлення даних, зачекайте...<BR><BR></DIV></TD></TR></TBODY></TABLE>
+<TABLE id=messagebox-1001-textfield class="x-field x-table-plain x-form-item x-form-type-text x-field-default x-anchor-form-item" style="DISPLAY: none" cellPadding=0>
+<TBODY>
+<TR role=presentation id=messagebox-1001-textfield-inputRow class=x-form-item-input-row>
+<TD role=presentation id=messagebox-1001-textfield-labelCell class=x-field-label-cell style="DISPLAY: none" vAlign=top width=105 halign="left"><LABEL id=messagebox-1001-textfield-labelEl class="x-form-item-label x-unselectable" style="WIDTH: 100px; MARGIN-RIGHT: 5px" for=messagebox-1001-textfield-inputEl unselectable="on"></LABEL></TD>
+<TD role=presentation id=messagebox-1001-textfield-bodyEl class="x-form-item-body  " colSpan=3><INPUT id=messagebox-1001-textfield-inputEl class="x-form-field x-form-text  " aria-invalid=false size=1 name=messagebox-1001-textfield-inputEl autocomplete="off"></TD></TR></TBODY></TABLE>
+<TABLE id=messagebox-1001-textarea class="x-field x-table-plain x-form-item x-form-type-text x-field-default x-anchor-form-item" style="HEIGHT: 75px; DISPLAY: none" cellPadding=0>
+<TBODY>
+<TR role=presentation id=messagebox-1001-textarea-inputRow class=x-form-item-input-row>
+<TD role=presentation id=messagebox-1001-textarea-labelCell class=x-field-label-cell style="DISPLAY: none" vAlign=top width=105 halign="left"><LABEL id=messagebox-1001-textarea-labelEl class="x-form-item-label x-unselectable" style="WIDTH: 100px; MARGIN-RIGHT: 5px" for=messagebox-1001-textarea-inputEl unselectable="on"></LABEL></TD>
+<TD role=presentation id=messagebox-1001-textarea-bodyEl class="x-form-item-body  " colSpan=3><TEXTAREA id=messagebox-1001-textarea-inputEl class="x-form-field x-form-text x-form-textarea" aria-invalid=false rows=4 name=messagebox-1001-textarea-inputEl autocomplete="off"></TEXTAREA></TD></TR></TBODY></TABLE>
+<DIV role=presentation id=container-1003-clearEl class=x-clear></DIV></TD></TR></TBODY></TABLE></DIV></DIV></DIV></DIV>
+<DIV id=messagebox-1001-progressbar class="x-progress x-box-item x-window-item x-progress-default" style="WIDTH: 241px; RIGHT: auto; LEFT: 10px; MARGIN: 0px; TOP: 57px">
+<DIV id=ext-gen1243 class="x-progress-text x-progress-text-back" style="WIDTH: 239px" _nodup="30807"></DIV>
+<DIV id=messagebox-1001-progressbar-bar class="x-progress-bar x-progress-bar-default" style="WIDTH: 0%">
+<DIV id=ext-gen1242 class=x-progress-text style="WIDTH: 239px" _nodup="30807"></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV role=presentation id=messagebox-1001-frame1BL class="x-frame-bl x-window-bl x-window-default-bl x-window-default-closable-bl">
+<DIV role=presentation id=messagebox-1001-frame1BR class="x-frame-br x-window-br x-window-default-br x-window-default-closable-br">
+<DIV role=presentation id=messagebox-1001-frame1BC class="x-frame-bc x-window-bc x-window-default-bc x-window-default-closable-bc"></DIV></DIV></DIV>
+<DIV id=messagebox-1001-toolbar class="x-toolbar x-docked x-toolbar-footer x-docked-bottom x-toolbar-docked-bottom x-toolbar-footer-docked-bottom x-box-layout-ct" style="DISPLAY: none">
+<DIV role=presentation id=messagebox-1001-toolbar-innerCt class="x-box-inner ">
+<DIV id=messagebox-1001-toolbar-targetEl class=x-box-target><A role=button tabIndex=0 id=button-1005 class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-small x-noicon x-btn-noicon x-btn-default-small-noicon" hideFocus style="DISPLAY: none" unselectable="on">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1005-frame1TL class="x-frame-tl x-btn-tl x-btn-default-small-tl x-btn-default-small-noicon-tl"></TD>
+<TD role=presentation id=button-1005-frame1TC class="x-frame-tc x-btn-tc x-btn-default-small-tc x-btn-default-small-noicon-tc"></TD>
+<TD role=presentation id=button-1005-frame1TR class="x-frame-tr x-btn-tr x-btn-default-small-tr x-btn-default-small-noicon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1005-frame1ML class="x-frame-ml x-btn-ml x-btn-default-small-ml x-btn-default-small-noicon-ml"></TD>
+<TD role=presentation id=button-1005-frame1MC class="x-frame-mc x-btn-mc x-btn-default-small-mc x-btn-default-small-noicon-mc"><SPAN id=button-1005-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1005-btnEl class=x-btn-button><SPAN id=button-1005-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">OK</SPAN><SPAN role=img id=button-1005-btnIconEl class="x-btn-icon-el  " unselectable="on"></SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1005-frame1MR class="x-frame-mr x-btn-mr x-btn-default-small-mr x-btn-default-small-noicon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1005-frame1BL class="x-frame-bl x-btn-bl x-btn-default-small-bl x-btn-default-small-noicon-bl"></TD>
+<TD role=presentation id=button-1005-frame1BC class="x-frame-bc x-btn-bc x-btn-default-small-bc x-btn-default-small-noicon-bc"></TD>
+<TD role=presentation id=button-1005-frame1BR class="x-frame-br x-btn-br x-btn-default-small-br x-btn-default-small-noicon-br"></TD></TR></TBODY></TABLE></A><A role=button tabIndex=0 id=button-1006 class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-small x-noicon x-btn-noicon x-btn-default-small-noicon" hideFocus style="DISPLAY: none" unselectable="on">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1006-frame1TL class="x-frame-tl x-btn-tl x-btn-default-small-tl x-btn-default-small-noicon-tl"></TD>
+<TD role=presentation id=button-1006-frame1TC class="x-frame-tc x-btn-tc x-btn-default-small-tc x-btn-default-small-noicon-tc"></TD>
+<TD role=presentation id=button-1006-frame1TR class="x-frame-tr x-btn-tr x-btn-default-small-tr x-btn-default-small-noicon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1006-frame1ML class="x-frame-ml x-btn-ml x-btn-default-small-ml x-btn-default-small-noicon-ml"></TD>
+<TD role=presentation id=button-1006-frame1MC class="x-frame-mc x-btn-mc x-btn-default-small-mc x-btn-default-small-noicon-mc"><SPAN id=button-1006-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1006-btnEl class=x-btn-button><SPAN id=button-1006-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">Так</SPAN><SPAN role=img id=button-1006-btnIconEl class="x-btn-icon-el  " unselectable="on"></SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1006-frame1MR class="x-frame-mr x-btn-mr x-btn-default-small-mr x-btn-default-small-noicon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1006-frame1BL class="x-frame-bl x-btn-bl x-btn-default-small-bl x-btn-default-small-noicon-bl"></TD>
+<TD role=presentation id=button-1006-frame1BC class="x-frame-bc x-btn-bc x-btn-default-small-bc x-btn-default-small-noicon-bc"></TD>
+<TD role=presentation id=button-1006-frame1BR class="x-frame-br x-btn-br x-btn-default-small-br x-btn-default-small-noicon-br"></TD></TR></TBODY></TABLE></A><A role=button tabIndex=0 id=button-1007 class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-small x-noicon x-btn-noicon x-btn-default-small-noicon" hideFocus style="DISPLAY: none" unselectable="on">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1007-frame1TL class="x-frame-tl x-btn-tl x-btn-default-small-tl x-btn-default-small-noicon-tl"></TD>
+<TD role=presentation id=button-1007-frame1TC class="x-frame-tc x-btn-tc x-btn-default-small-tc x-btn-default-small-noicon-tc"></TD>
+<TD role=presentation id=button-1007-frame1TR class="x-frame-tr x-btn-tr x-btn-default-small-tr x-btn-default-small-noicon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1007-frame1ML class="x-frame-ml x-btn-ml x-btn-default-small-ml x-btn-default-small-noicon-ml"></TD>
+<TD role=presentation id=button-1007-frame1MC class="x-frame-mc x-btn-mc x-btn-default-small-mc x-btn-default-small-noicon-mc"><SPAN id=button-1007-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1007-btnEl class=x-btn-button><SPAN id=button-1007-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">Ні</SPAN><SPAN role=img id=button-1007-btnIconEl class="x-btn-icon-el  " unselectable="on"></SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1007-frame1MR class="x-frame-mr x-btn-mr x-btn-default-small-mr x-btn-default-small-noicon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1007-frame1BL class="x-frame-bl x-btn-bl x-btn-default-small-bl x-btn-default-small-noicon-bl"></TD>
+<TD role=presentation id=button-1007-frame1BC class="x-frame-bc x-btn-bc x-btn-default-small-bc x-btn-default-small-noicon-bc"></TD>
+<TD role=presentation id=button-1007-frame1BR class="x-frame-br x-btn-br x-btn-default-small-br x-btn-default-small-noicon-br"></TD></TR></TBODY></TABLE></A><A role=button tabIndex=0 id=button-1008 class="x-btn x-unselectable x-box-item x-toolbar-item x-btn-default-small x-noicon x-btn-noicon x-btn-default-small-noicon" hideFocus style="DISPLAY: none" unselectable="on">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1008-frame1TL class="x-frame-tl x-btn-tl x-btn-default-small-tl x-btn-default-small-noicon-tl"></TD>
+<TD role=presentation id=button-1008-frame1TC class="x-frame-tc x-btn-tc x-btn-default-small-tc x-btn-default-small-noicon-tc"></TD>
+<TD role=presentation id=button-1008-frame1TR class="x-frame-tr x-btn-tr x-btn-default-small-tr x-btn-default-small-noicon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1008-frame1ML class="x-frame-ml x-btn-ml x-btn-default-small-ml x-btn-default-small-noicon-ml"></TD>
+<TD role=presentation id=button-1008-frame1MC class="x-frame-mc x-btn-mc x-btn-default-small-mc x-btn-default-small-noicon-mc"><SPAN id=button-1008-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1008-btnEl class=x-btn-button><SPAN id=button-1008-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">Відміна</SPAN><SPAN role=img id=button-1008-btnIconEl class="x-btn-icon-el  " unselectable="on"></SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1008-frame1MR class="x-frame-mr x-btn-mr x-btn-default-small-mr x-btn-default-small-noicon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1008-frame1BL class="x-frame-bl x-btn-bl x-btn-default-small-bl x-btn-default-small-noicon-bl"></TD>
+<TD role=presentation id=button-1008-frame1BC class="x-frame-bc x-btn-bc x-btn-default-small-bc x-btn-default-small-noicon-bc"></TD>
+<TD role=presentation id=button-1008-frame1BR class="x-frame-br x-btn-br x-btn-default-small-br x-btn-default-small-noicon-br"></TD></TR></TBODY></TABLE></A></DIV></DIV></DIV></DIV>
+<DIV id=ext-gen1244 class=x-mask style="HEIGHT: 935px; WIDTH: 1899px; RIGHT: auto; LEFT: 0px; Z-INDEX: 19007; DISPLAY: none; TOP: 0px"></DIV>
+<DIV id=mainReferenceGrid class="x-panel x-grid-with-row-lines x-panel-default x-grid x-border-box" style="HEIGHT: 201px; PADDING-BOTTOM: 4px; PADDING-TOP: 4px; PADDING-LEFT: 4px; MARGIN: 4px; PADDING-RIGHT: 4px">
+<DIV id=mainReferenceGrid_header class="x-panel-header x-header x-header-horizontal x-docked x-unselectable x-panel-header-default x-horizontal x-panel-header-horizontal x-panel-header-default-horizontal x-top x-panel-header-top x-panel-header-default-top x-docked-top x-panel-header-docked-top x-panel-header-default-docked-top" style="WIDTH: 1883px; RIGHT: auto; LEFT: 4px; TOP: 4px">
+<DIV id=mainReferenceGrid_header-body class="x-header-body x-panel-header-body x-panel-header-body-default x-panel-header-body-horizontal x-panel-header-body-default-horizontal x-panel-header-body-top x-panel-header-body-default-top x-panel-header-body-docked-top x-panel-header-body-default-docked-top x-box-layout-ct x-panel-header-body-default-horizontal x-panel-header-body-default-top x-panel-header-body-default-docked-top" style="WIDTH: 1865px">
+<DIV role=presentation id=mainReferenceGrid_header-innerCt class="x-box-inner " style="HEIGHT: 16px; WIDTH: 1865px">
+<DIV id=mainReferenceGrid_header-targetEl class=x-box-target style="WIDTH: 1865px">
+<DIV id=mainReferenceGrid_header_hd class="x-component x-header-text-container x-panel-header-text-container x-panel-header-text-container-default x-box-item x-component-default" style="WIDTH: 1865px; RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 0px" unselectable="on"><SPAN id=mainReferenceGrid_header_hd-textEl class="x-header-text x-panel-header-text x-panel-header-text-default" unselectable="on">OVRN-7) Чистые кредитовые Обороты </SPAN></DIV></DIV></DIV></DIV></DIV>
+<DIV id=GridFilterPanel-1098 class="x-panel extfilter-panel x-docked x-panel-default x-docked-top x-panel-docked-top x-panel-default-docked-top x-collapsed x-panel-collapsed x-panel-default-collapsed" style="HEIGHT: 32px; WIDTH: 1883px; RIGHT: auto; LEFT: 4px; TOP: 35px">
+<DIV id=GridFilterPanel-1098_header class="x-panel-header x-header x-header-horizontal x-docked x-unselectable x-panel-header-default x-horizontal x-panel-header-horizontal x-panel-header-default-horizontal x-top x-panel-header-top x-panel-header-default-top x-collapsed x-panel-header-collapsed x-panel-header-default-collapsed x-collapsed-top x-panel-header-collapsed-top x-panel-header-default-collapsed-top x-collapsed-border-top x-panel-header-collapsed-border-top x-panel-header-default-collapsed-border-top x-docked-top x-panel-header-docked-top x-panel-header-default-docked-top" style="WIDTH: 1883px; RIGHT: auto; LEFT: 0px; TOP: 0px">
+<DIV id=GridFilterPanel-1098_header-body class="x-header-body x-panel-header-body x-panel-header-body-default x-panel-header-body-horizontal x-panel-header-body-default-horizontal x-panel-header-body-top x-panel-header-body-default-top x-panel-header-body-collapsed x-panel-header-body-default-collapsed x-panel-header-body-collapsed-top x-panel-header-body-default-collapsed-top x-panel-header-body-collapsed-border-top x-panel-header-body-default-collapsed-border-top x-panel-header-body-docked-top x-panel-header-body-default-docked-top x-box-layout-ct x-panel-header-body-default-horizontal x-panel-header-body-default-top x-panel-header-body-default-collapsed x-panel-header-body-default-collapsed-top x-panel-header-body-default-collapsed-border-top x-panel-header-body-default-docked-top" style="WIDTH: 1865px">
+<DIV role=presentation id=GridFilterPanel-1098_header-innerCt class="x-box-inner " style="HEIGHT: 16px; WIDTH: 1865px">
+<DIV id=GridFilterPanel-1098_header-targetEl class=x-box-target style="WIDTH: 1865px">
+<DIV id=GridFilterPanel-1098_header_hd class="x-component x-header-text-container x-panel-header-text-container x-panel-header-text-container-default x-box-item x-component-default" style="WIDTH: 1848px; RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 0px" unselectable="on"><SPAN id=GridFilterPanel-1098_header_hd-textEl class="x-header-text x-panel-header-text x-panel-header-text-default" unselectable="on">фільтри та панель керування</SPAN></DIV>
+<DIV id=tool-1152 class="x-tool x-box-item x-tool-default x-tool-after-title" style="HEIGHT: 15px; WIDTH: 15px; RIGHT: auto; LEFT: 1850px; MARGIN: 0px; TOP: 0px"><IMG role=presentation id=tool-1152-toolEl class="x-tool-img x-tool-expand-bottom" src="http://www.sencha.com/s.gif"></DIV></DIV></DIV></DIV></DIV>
+<DIV style="POSITION: relative"></DIV>
+<DIV id=GridFilterPanel-1098-body class="x-panel-body x-panel-body-default x-docked-top x-panel-body-docked-top x-panel-body-default-docked-top x-collapsed x-panel-body-collapsed x-panel-body-default-collapsed x-panel-body-default x-panel-body-default-docked-top x-panel-body-default-collapsed" style="HEIGHT: 0px; WIDTH: 1883px; LEFT: 0px; TOP: 32px; VISIBILITY: hidden">
+<DIV id=GridFilterPanel-1098-outerCt style="ZOOM: 1">
+<DIV id=GridFilterPanel-1098-innerCt style="HEIGHT: 100%; ZOOM: 1">
+<DIV role=presentation id=GridFilterPanel-1098-clearEl class=x-clear></DIV></DIV></DIV></DIV></DIV>
+<DIV id=panel-1142 class="x-panel x-docked x-panel-default x-docked-top x-panel-docked-top x-panel-default-docked-top" style="DISPLAY: none">
+<DIV style="POSITION: relative"></DIV>
+<DIV id=panel-1142-body class="x-panel-body x-panel-body-default x-docked-top x-panel-body-docked-top x-panel-body-default-docked-top x-panel-body-default x-panel-body-default-docked-top">
+<DIV id=panel-1142-outerCt style="ZOOM: 1">
+<DIV id=panel-1142-innerCt style="HEIGHT: 100%; ZOOM: 1">
+<DIV role=presentation id=panel-1142-clearEl class=x-clear></DIV></DIV></DIV></DIV></DIV>
+<DIV id=toolbar-1143 class="x-toolbar x-docked x-toolbar-default x-docked-top x-toolbar-docked-top x-toolbar-default-docked-top x-box-layout-ct" style="WIDTH: 1883px; RIGHT: auto; LEFT: 4px; TOP: 67px">
+<DIV role=presentation id=toolbar-1143-innerCt class="x-box-inner " style="HEIGHT: 22px; WIDTH: 1879px">
+<DIV id=toolbar-1143-targetEl class=x-box-target style="WIDTH: 1879px"><A role=button id=button-1144 class="x-btn x-unselectable x-btn-toolbar x-box-item x-toolbar-item x-btn-default-toolbar-small x-item-disabled x-disabled x-btn-disabled x-btn-default-toolbar-small-disabled x-icon-text-left x-btn-icon-text-left x-btn-default-toolbar-small-icon-text-left" hideFocus style="RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 0px" unselectable="on" data-qtip="Видалити вибраний рядок">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1144-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-disabled-tl x-btn-default-toolbar-small-icon-text-left-tl"></TD>
+<TD role=presentation id=button-1144-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-disabled-tc x-btn-default-toolbar-small-icon-text-left-tc"></TD>
+<TD role=presentation id=button-1144-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-disabled-tr x-btn-default-toolbar-small-icon-text-left-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1144-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-disabled-ml x-btn-default-toolbar-small-icon-text-left-ml"></TD>
+<TD role=presentation id=button-1144-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-disabled-mc x-btn-default-toolbar-small-icon-text-left-mc"><SPAN id=button-1144-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1144-btnEl class=x-btn-button><SPAN id=button-1144-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">Видалити</SPAN><SPAN role=img id=button-1144-btnIconEl class="x-btn-icon-el minus_once " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1144-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-disabled-mr x-btn-default-toolbar-small-icon-text-left-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1144-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-disabled-bl x-btn-default-toolbar-small-icon-text-left-bl"></TD>
+<TD role=presentation id=button-1144-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-disabled-bc x-btn-default-toolbar-small-icon-text-left-bc"></TD>
+<TD role=presentation id=button-1144-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-disabled-br x-btn-default-toolbar-small-icon-text-left-br"></TD></TR></TBODY></TABLE></A><A role=button id=button-1145 class="x-btn x-unselectable x-btn-toolbar x-box-item x-toolbar-item x-btn-default-toolbar-small x-item-disabled x-disabled x-btn-disabled x-btn-default-toolbar-small-disabled x-icon-text-left x-btn-icon-text-left x-btn-default-toolbar-small-icon-text-left" hideFocus style="RIGHT: auto; LEFT: 80px; MARGIN: 0px; TOP: 0px" unselectable="on" data-qtip="Інформаційне вікно">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1145-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-disabled-tl x-btn-default-toolbar-small-icon-text-left-tl"></TD>
+<TD role=presentation id=button-1145-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-disabled-tc x-btn-default-toolbar-small-icon-text-left-tc"></TD>
+<TD role=presentation id=button-1145-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-disabled-tr x-btn-default-toolbar-small-icon-text-left-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1145-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-disabled-ml x-btn-default-toolbar-small-icon-text-left-ml"></TD>
+<TD role=presentation id=button-1145-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-disabled-mc x-btn-default-toolbar-small-icon-text-left-mc"><SPAN id=button-1145-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1145-btnEl class=x-btn-button><SPAN id=button-1145-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">Перегляд</SPAN><SPAN role=img id=button-1145-btnIconEl class="x-btn-icon-el SEARCH " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1145-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-disabled-mr x-btn-default-toolbar-small-icon-text-left-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1145-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-disabled-bl x-btn-default-toolbar-small-icon-text-left-bl"></TD>
+<TD role=presentation id=button-1145-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-disabled-bc x-btn-default-toolbar-small-icon-text-left-bc"></TD>
+<TD role=presentation id=button-1145-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-disabled-br x-btn-default-toolbar-small-icon-text-left-br"></TD></TR></TBODY></TABLE></A><A role=button tabIndex=0 id=button-1146 class="x-btn x-unselectable x-btn-toolbar x-box-item x-toolbar-item x-btn-default-toolbar-small x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 160px; MARGIN: 0px; TOP: 0px" unselectable="on" data-qtip="Завантажити в Excel">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1146-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1146-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1146-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1146-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1146-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1146-btnWrap class="x-btn-wrap x-btn-arrow x-btn-arrow-right" unselectable="on"><SPAN id=button-1146-btnEl class=x-btn-button><SPAN id=button-1146-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1146-btnIconEl class="x-btn-icon-el excel " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1146-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1146-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1146-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1146-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A><A role=button tabIndex=0 id=button-1150 class="x-btn x-unselectable x-btn-toolbar x-box-item x-toolbar-item x-btn-default-toolbar-small x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 196px; MARGIN: 0px; TOP: 0px" unselectable="on" data-qtip="Виконання процедури">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1150-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1150-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1150-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1150-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1150-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1150-btnWrap class="x-btn-wrap x-btn-arrow x-btn-arrow-right" unselectable="on"><SPAN id=button-1150-btnEl class=x-btn-button><SPAN id=button-1150-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1150-btnIconEl class="x-btn-icon-el arrow_right " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1150-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1150-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1150-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1150-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A></DIV></DIV></DIV>
+<DIV id=headercontainer-1111 class="x-grid-header-ct x-docked x-grid-header-ct-default x-docked-top x-grid-header-ct-docked-top x-grid-header-ct-default-docked-top x-box-layout-ct" style="BORDER-LEFT-WIDTH: 1px; BORDER-RIGHT-WIDTH: 1px; WIDTH: 1883px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 4px; TOP: 94px; BORDER-TOP-WIDTH: 1px">
+<DIV role=presentation id=headercontainer-1111-innerCt class="x-box-inner " style="HEIGHT: 35px; WIDTH: 1381px">
+<DIV id=headercontainer-1111-targetEl class=x-box-target style="WIDTH: 1381px">
+<DIV id=rownumberer-1096 class="x-column-header x-row-numberer x-column-header-align-right x-box-item x-column-header-default x-unselectable x-column-header-first" style="BORDER-LEFT-WIDTH: 1px; HEIGHT: 35px; WIDTH: 40px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=rownumberer-1096-titleEl class=x-column-header-inner style="PADDING-BOTTOM: 11px; PADDING-TOP: 11px"><SPAN id=rownumberer-1096-textEl class=x-column-header-text>№</SPAN></DIV></DIV>
+<DIV id=gridcolumn-1112 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 40px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1112-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1112-textEl class=x-column-header-text>Ід.<BR>Платн.</SPAN>
+<DIV id=gridcolumn-1112-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1113 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 150px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1113-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1113-textEl class=x-column-header-text>Назва<BR>Платн.</SPAN>
+<DIV id=gridcolumn-1113-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1114 class="x-column-header x-column-header-align-right x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 260px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1114-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1114-textEl class=x-column-header-text>Сума<BR>ЧКО</SPAN>
+<DIV id=gridcolumn-1114-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1115 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 371px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1115-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1115-textEl class=x-column-header-text>Призначення пл<BR>ЧКО</SPAN>
+<DIV id=gridcolumn-1115-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1116 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 481px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1116-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1116-textEl class=x-column-header-text>Банк<BR>Платн.</SPAN>
+<DIV id=gridcolumn-1116-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1117 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 591px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1117-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1117-textEl class=x-column-header-text>Рах.<BR>Платн.</SPAN>
+<DIV id=gridcolumn-1117-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=datecolumn-1118 class="x-column-header x-column-header-align-center x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 702px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=datecolumn-1118-titleEl class=x-column-header-inner><SPAN id=datecolumn-1118-textEl class=x-column-header-text>Дата<BR>ЧКО</SPAN>
+<DIV id=datecolumn-1118-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1119 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 812px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1119-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1119-textEl class=x-column-header-text>№<BR>док</SPAN>
+<DIV id=gridcolumn-1119-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1120 class="x-column-header x-column-header-align-right x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 923px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1120-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1120-textEl class=x-column-header-text>Реф.ЧКО<BR>в АБС</SPAN>
+<DIV id=gridcolumn-1120-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=datecolumn-1121 class="x-column-header x-column-header-align-center x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 1033px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=datecolumn-1121-titleEl class=x-column-header-inner><SPAN id=datecolumn-1121-textEl class=x-column-header-text>Місячн<BR>дата</SPAN>
+<DIV id=datecolumn-1121-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1122 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 1144px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1122-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1122-textEl class=x-column-header-text>Рах.<BR>Одерж.</SPAN>
+<DIV id=gridcolumn-1122-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV>
+<DIV id=gridcolumn-1123 class="x-column-header x-column-header-align-left x-box-item x-column-header-default x-unselectable x-column-header-last" style="BORDER-LEFT-WIDTH: 1px; WIDTH: 110px; BORDER-BOTTOM-WIDTH: 1px; RIGHT: auto; LEFT: 1254px; MARGIN: 0px; TOP: 0px; BORDER-TOP-WIDTH: 1px">
+<DIV id=gridcolumn-1123-titleEl class=x-column-header-inner><SPAN id=gridcolumn-1123-textEl class=x-column-header-text>МФО.<BR>Одерж.</SPAN>
+<DIV id=gridcolumn-1123-triggerEl class=x-column-header-trigger style="HEIGHT: 35px"></DIV></DIV></DIV></DIV></DIV></DIV>
+<DIV style="POSITION: relative"></DIV>
+<DIV id=mainReferenceGrid-body class="x-panel-body x-grid-body x-panel-body-default x-layout-fit x-panel-body-default" style="HEIGHT: 38px; WIDTH: 1883px; OVERFLOW-Y: auto; POSITION: relative; LEFT: 0px; TOP: 126px">
+<DIV tabIndex=-1 id=gridview-1124 class="x-grid-view x-fit-item x-grid-view-default x-unselectable" style="OVERFLOW: auto; WIDTH: 1881px; POSITION: relative; MARGIN: 0px">
+<TABLE role=presentation tabIndex=-1 id=gridview-1124-table class="x-gridview-1124-table x-grid-table x-grid-with-row-lines" style="WIDTH: 1364px" cellSpacing=0 cellPadding=0 border=0>
+<COLGROUP>
+<COL class=x-grid-cell-rownumberer-1096 style="WIDTH: 40px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1112 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1113 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1114 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1115 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1116 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1117 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-datecolumn-1118 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1119 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1120 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-datecolumn-1121 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1122 style="WIDTH: 110px"></COLGROUP>
+<COLGROUP>
+<COL class=x-grid-cell-gridcolumn-1123 style="WIDTH: 110px"></COLGROUP>
+<TFOOT>
+<TR role=row tabIndex=-1 id=gridview-1124-record-gridview-1124-summary-record class=" x-grid-row-summary" data-recordIndex="-1" data-recordId="gridview-1124-summary-record" data-boundView="gridview-1124">
+<TD role=gridcell id=ext-gen1403 class="x-grid-cell x-grid-td x-grid-cell-rownumberer-1096 x-grid-cell-row-numberer x-grid-cell-special x-grid-cell-first x-unselectable x-grid-cell-row-numberer x-grid-cell-special">
+<DIV class="x-grid-cell-inner x-grid-cell-inner-row-numberer" style="TEXT-ALIGN: right" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1404 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1112 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1405 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1113 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1406 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1114 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: right" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1407 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1115 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1408 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1116 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1409 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1117 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1410 class="x-grid-cell x-grid-td x-grid-cell-datecolumn-1118 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: center" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1411 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1119 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1412 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1120 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: right" unselectable="on">0</DIV></TD>
+<TD role=gridcell id=ext-gen1413 class="x-grid-cell x-grid-td x-grid-cell-datecolumn-1121 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: center" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1414 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1122 x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD>
+<TD role=gridcell id=ext-gen1415 class="x-grid-cell x-grid-td x-grid-cell-gridcolumn-1123 x-grid-cell-last x-unselectable ">
+<DIV class="x-grid-cell-inner " style="TEXT-ALIGN: left" unselectable="on">&nbsp;</DIV></TD></TR></TFOOT>
+<TBODY id=gridview-1124-body></TBODY></TABLE></DIV></DIV>
+<DIV id=pagingtoolbar-1125 class="x-toolbar x-docked x-toolbar-default x-docked-bottom x-toolbar-docked-bottom x-toolbar-default-docked-bottom x-box-layout-ct" style="WIDTH: 1883px; RIGHT: auto; LEFT: 4px; TOP: 168px">
+<DIV role=presentation id=pagingtoolbar-1125-innerCt class="x-box-inner " style="HEIGHT: 24px; WIDTH: 1879px">
+<DIV id=pagingtoolbar-1125-targetEl class=x-box-target style="WIDTH: 1879px"><A role=button id=button-1126 class="x-btn x-unselectable x-btn-toolbar x-item-disabled x-box-item x-toolbar-item x-btn-default-toolbar-small x-disabled x-btn-disabled x-btn-default-toolbar-small-disabled x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 0px; MARGIN: 0px; TOP: 1px" unselectable="on" data-qtip="Перша сторінка">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1126-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-disabled-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1126-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-disabled-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1126-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-disabled-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1126-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-disabled-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1126-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-disabled-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1126-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1126-btnEl class=x-btn-button><SPAN id=button-1126-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1126-btnIconEl class="x-btn-icon-el x-tbar-page-first " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1126-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-disabled-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1126-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-disabled-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1126-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-disabled-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1126-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-disabled-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A><A role=button id=button-1127 class="x-btn x-unselectable x-btn-toolbar x-item-disabled x-box-item x-toolbar-item x-btn-default-toolbar-small x-disabled x-btn-disabled x-btn-default-toolbar-small-disabled x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 24px; MARGIN: 0px; TOP: 1px" unselectable="on" data-qtip="Попередня сторінка">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1127-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-disabled-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1127-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-disabled-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1127-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-disabled-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1127-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-disabled-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1127-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-disabled-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1127-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1127-btnEl class=x-btn-button><SPAN id=button-1127-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1127-btnIconEl class="x-btn-icon-el x-tbar-page-prev " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1127-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-disabled-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1127-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-disabled-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1127-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-disabled-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1127-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-disabled-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A>
+<DIV id=tbseparator-1128 class="x-toolbar-separator x-toolbar-separator-horizontal x-box-item x-toolbar-item" style="RIGHT: auto; LEFT: 48px; MARGIN: 0px; TOP: 5px"></DIV>
+<DIV id=tbtext-1129 class="x-toolbar-text x-box-item x-toolbar-item x-toolbar-text-default" style="RIGHT: auto; LEFT: 56px; MARGIN: 0px; TOP: 4px">Сторінка</DIV>
+<TABLE id=numberfield-1130 class="x-field x-tbar-page-number x-table-plain x-form-item x-form-type-text x-item-disabled x-box-item x-toolbar-item x-field-default x-hbox-form-item" style="WIDTH: 30px; RIGHT: auto; TABLE-LAYOUT: fixed; LEFT: 108px; MARGIN: 0px; TOP: 1px" cellPadding=0>
+<TBODY>
+<TR role=presentation id=numberfield-1130-inputRow class=x-form-item-input-row>
+<TD role=presentation id=numberfield-1130-labelCell class=x-field-label-cell style="DISPLAY: none" vAlign=top width=105 halign="left"><LABEL id=numberfield-1130-labelEl class="x-form-item-label x-unselectable x-form-item-label-left" style="WIDTH: 100px; MARGIN-RIGHT: 5px" for=numberfield-1130-inputEl unselectable="on"></LABEL></TD>
+<TD role=presentation id=numberfield-1130-bodyEl class="x-form-item-body  " style="WIDTH: 100%" colSpan=3>
+<TABLE id=numberfield-1130-triggerWrap class="x-form-trigger-wrap x-unselectable" style="WIDTH: 100%; TABLE-LAYOUT: fixed" cellSpacing=0 cellPadding=0>
+<TBODY>
+<TR>
+<TD id=numberfield-1130-inputCell class=x-form-trigger-input-cell style="WIDTH: 100%"><INPUT disabled id=numberfield-1130-inputEl class="x-form-field x-form-text  " aria-invalid=false style="WIDTH: 100%" size=1 value=0 name=inputItem unselectable="on" autocomplete="off" data-errorqtip></TD>
+<TD id=ext-gen1358 class=x-trigger-cell style="DISPLAY: none">
+<DIV role=button id=ext-gen1356 class="x-trigger-index-0 x-form-trigger x-form-spinner-up  " _nodup="30810"></DIV>
+<DIV role=button id=ext-gen1357 class="x-trigger-index-1 x-form-trigger x-form-spinner-down x-form-spinner-down-disabled " _nodup="30810"></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE>
+<DIV id=tbtext-1131 class="x-toolbar-text x-box-item x-toolbar-item x-toolbar-text-default" style="RIGHT: auto; LEFT: 146px; MARGIN: 0px; TOP: 4px"></DIV>
+<DIV id=tbseparator-1132 class="x-toolbar-separator x-toolbar-separator-horizontal x-box-item x-toolbar-item" style="RIGHT: auto; LEFT: 152px; MARGIN: 0px; TOP: 5px"></DIV><A role=button id=button-1133 class="x-btn x-unselectable x-btn-toolbar x-item-disabled x-box-item x-toolbar-item x-btn-default-toolbar-small x-disabled x-btn-disabled x-btn-default-toolbar-small-disabled x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 156px; MARGIN: 0px; TOP: 1px" unselectable="on" data-qtip="Наступна сторінка">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1133-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-disabled-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1133-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-disabled-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1133-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-disabled-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1133-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-disabled-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1133-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-disabled-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1133-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1133-btnEl class=x-btn-button><SPAN id=button-1133-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1133-btnIconEl class="x-btn-icon-el x-tbar-page-next " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1133-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-disabled-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1133-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-disabled-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1133-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-disabled-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1133-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-disabled-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A><A role=button id=button-1134 class="x-btn x-unselectable x-btn-toolbar x-item-disabled x-box-item x-toolbar-item x-btn-default-toolbar-small x-disabled x-btn-disabled x-btn-default-toolbar-small-disabled x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 180px; MARGIN: 0px; DISPLAY: none; TOP: 1px" unselectable="on" data-qtip="Остання сторінка">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1134-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-disabled-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1134-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-disabled-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1134-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-disabled-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1134-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-disabled-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1134-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-disabled-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1134-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1134-btnEl class=x-btn-button><SPAN id=button-1134-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1134-btnIconEl class="x-btn-icon-el x-tbar-page-last " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1134-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-disabled-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1134-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-disabled-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1134-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-disabled-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1134-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-disabled-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A>
+<DIV id=tbseparator-1135 class="x-toolbar-separator x-toolbar-separator-horizontal x-box-item x-toolbar-item" style="RIGHT: auto; LEFT: 180px; MARGIN: 0px; TOP: 5px"></DIV><A role=button tabIndex=0 id=button-1136 class="x-btn x-unselectable x-btn-toolbar x-box-item x-toolbar-item x-btn-default-toolbar-small x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 184px; MARGIN: 0px; TOP: 1px" unselectable="on" data-qtip="Оновити">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1136-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1136-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1136-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1136-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1136-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1136-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1136-btnEl class=x-btn-button><SPAN id=button-1136-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1136-btnIconEl class="x-btn-icon-el x-tbar-loading " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1136-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1136-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1136-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1136-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A>
+<DIV id=tbseparator-1137 class="x-toolbar-separator x-toolbar-separator-horizontal x-box-item x-toolbar-item" style="RIGHT: auto; LEFT: 208px; MARGIN: 0px; TOP: 5px"></DIV><A role=button id=button-1138 class="x-btn x-unselectable x-btn-toolbar x-box-item x-toolbar-item x-btn-default-toolbar-small x-item-disabled x-disabled x-btn-disabled x-btn-default-toolbar-small-disabled x-icon x-btn-icon x-btn-default-toolbar-small-icon" hideFocus style="RIGHT: auto; LEFT: 212px; MARGIN: 0px; TOP: 1px" unselectable="on" data-qtip="Скасувати усі фільтри">
+<TABLE class=x-table-plain cellPadding=0>
+<TBODY>
+<TR>
+<TD role=presentation id=button-1138-frame1TL class="x-frame-tl x-btn-tl x-btn-default-toolbar-small-tl x-btn-default-toolbar-small-disabled-tl x-btn-default-toolbar-small-icon-tl"></TD>
+<TD role=presentation id=button-1138-frame1TC class="x-frame-tc x-btn-tc x-btn-default-toolbar-small-tc x-btn-default-toolbar-small-disabled-tc x-btn-default-toolbar-small-icon-tc"></TD>
+<TD role=presentation id=button-1138-frame1TR class="x-frame-tr x-btn-tr x-btn-default-toolbar-small-tr x-btn-default-toolbar-small-disabled-tr x-btn-default-toolbar-small-icon-tr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1138-frame1ML class="x-frame-ml x-btn-ml x-btn-default-toolbar-small-ml x-btn-default-toolbar-small-disabled-ml x-btn-default-toolbar-small-icon-ml"></TD>
+<TD role=presentation id=button-1138-frame1MC class="x-frame-mc x-btn-mc x-btn-default-toolbar-small-mc x-btn-default-toolbar-small-disabled-mc x-btn-default-toolbar-small-icon-mc"><SPAN id=button-1138-btnWrap class=x-btn-wrap unselectable="on"><SPAN id=button-1138-btnEl class=x-btn-button><SPAN id=button-1138-btnInnerEl class="x-btn-inner x-btn-inner-center" unselectable="on">&nbsp;</SPAN><SPAN role=img id=button-1138-btnIconEl class="x-btn-icon-el clear_filter " unselectable="on">&nbsp;</SPAN></SPAN></SPAN></TD>
+<TD role=presentation id=button-1138-frame1MR class="x-frame-mr x-btn-mr x-btn-default-toolbar-small-mr x-btn-default-toolbar-small-disabled-mr x-btn-default-toolbar-small-icon-mr"></TD></TR>
+<TR>
+<TD role=presentation id=button-1138-frame1BL class="x-frame-bl x-btn-bl x-btn-default-toolbar-small-bl x-btn-default-toolbar-small-disabled-bl x-btn-default-toolbar-small-icon-bl"></TD>
+<TD role=presentation id=button-1138-frame1BC class="x-frame-bc x-btn-bc x-btn-default-toolbar-small-bc x-btn-default-toolbar-small-disabled-bc x-btn-default-toolbar-small-icon-bc"></TD>
+<TD role=presentation id=button-1138-frame1BR class="x-frame-br x-btn-br x-btn-default-toolbar-small-br x-btn-default-toolbar-small-disabled-br x-btn-default-toolbar-small-icon-br"></TD></TR></TBODY></TABLE></A>
+<DIV id=tbseparator-1139 class="x-toolbar-separator x-toolbar-separator-horizontal x-box-item x-toolbar-item" style="RIGHT: auto; LEFT: 236px; MARGIN: 0px; TOP: 5px"></DIV>
+<DIV id=tbfill-1140 class="x-component x-box-item x-toolbar-item x-component-default" style="HEIGHT: 0px; WIDTH: 1406px; RIGHT: auto; LEFT: 240px; MARGIN: 0px; TOP: 12px"></DIV>
+<DIV id=tbtext-1141 class="x-toolbar-text x-box-item x-toolbar-item x-toolbar-text-default" style="RIGHT: auto; LEFT: 1652px; MARGIN: 0px; TOP: 4px">Дані для відображення відсутні</DIV>
+<TABLE id=ext-comp-1097 class="x-field x-table-plain x-form-item x-form-type-text x-field-toolbar x-form-dirty x-box-item x-toolbar-item x-field-default-toolbar x-hbox-form-item" style="WIDTH: 60px; RIGHT: auto; TABLE-LAYOUT: fixed; LEFT: 1817px; MARGIN: 0px; TOP: 2px" cellPadding=0>
+<TBODY>
+<TR role=presentation id=ext-comp-1097-inputRow class=x-form-item-input-row>
+<TD role=presentation id=ext-comp-1097-labelCell class=x-field-label-cell style="DISPLAY: none" vAlign=top width=105 halign="left"><LABEL id=ext-comp-1097-labelEl class="x-form-item-label x-unselectable x-form-item-label-left" style="WIDTH: 100px; MARGIN-RIGHT: 5px" for=ext-comp-1097-inputEl unselectable="on"></LABEL></TD>
+<TD role=presentation id=ext-comp-1097-bodyEl class="x-form-item-body  " style="WIDTH: 100%" colSpan=3>
+<TABLE id=ext-comp-1097-triggerWrap class=x-form-trigger-wrap style="WIDTH: 100%; TABLE-LAYOUT: fixed" cellSpacing=0 cellPadding=0>
+<TBODY>
+<TR>
+<TD id=ext-comp-1097-inputCell class=x-form-trigger-input-cell style="WIDTH: 100%">
+<DIV role=presentation id=ext-gen1362 class="x-hide-display x-form-data-hidden"></DIV><INPUT id=ext-comp-1097-inputEl class="x-form-field x-form-required-field x-form-text  x-trigger-noedit" aria-invalid=false style="WIDTH: 100%" readOnly value=10 name=ext-comp-1097-inputEl autocomplete="off" data-errorqtip></TD>
+<TD id=ext-gen1361 class=" x-trigger-cell x-unselectable" style="WIDTH: 17px" vAlign=top>
+<DIV role=button id=ext-gen1360 class="x-trigger-index-0 x-form-trigger x-form-arrow-trigger x-form-trigger-first"></DIV></TD></TR></TBODY></TABLE></TD></TR></TBODY></TABLE></DIV></DIV></DIV></DIV>
+<DIV id=ext-gen1363 class=x-mask style="HEIGHT: 36px; WIDTH: 1881px; RIGHT: auto; LEFT: 9px; Z-INDEX: 18999; TOP: 149px; VISIBILITY: hidden"></DIV>
+<DIV id=loadmask-1153 class="x-mask-msg x-layer x-mask-msg-default x-border-box" style="RIGHT: auto; LEFT: 887px; Z-INDEX: 19001; DISPLAY: none; TOP: 151px">
+<DIV id=loadmask-1153-msgEl class=" x-mask-msg-inner">
+<DIV id=loadmask-1153-msgTextEl class=x-mask-msg-text>Завантаження...</DIV></DIV></DIV></BODY></HTML>
