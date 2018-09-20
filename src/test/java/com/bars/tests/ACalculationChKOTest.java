@@ -65,7 +65,5 @@ public class ACalculationChKOTest {
         List<SelenideElement> CHKO = $$(By.xpath("//*[@class='x-grid-cell-inner ']"));
         List<String> List = CHKO.stream().map(WebElement::getText).collect(Collectors.toList());
         System.out.println("Список ЧКО: " + List);
-
-
     }
 }
