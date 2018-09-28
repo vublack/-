@@ -1,11 +1,10 @@
-ACalculationChKO\
 # Created by .ignore support plugin (hsz.mobi)
 ### Java template
 # Compiled class file
 *.class
 
 # Log file
-debug.log
+*.log
 
 # BlueJ files
 *.ctxt
@@ -27,7 +26,5 @@ debug.log
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
-
-# file: ~/.gitignore_global
-.idea
-target
+.idea/
+target/

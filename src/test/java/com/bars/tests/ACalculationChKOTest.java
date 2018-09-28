@@ -1,6 +1,5 @@
 package com.bars.tests;
 
-
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.junit.ScreenShooter;
@@ -29,7 +28,7 @@ public class ACalculationChKOTest {
     @BeforeClass
     public static void setup() {
         timeout = 20000;
-        baseUrl = "http://10.10.17.50:8080/barsroot/";
+        baseUrl = "http://10.10.17.22:8080/barsroot/";
         browser = "ie";
         InternetExplorerDriverManager.getInstance(DriverManagerType.IEXPLORER).arch32().setup();
         open("/");
