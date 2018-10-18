@@ -10,11 +10,8 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-
 import java.util.List;
-import java.util.Set;
 import java.util.stream.Collectors;
-
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Configuration.*;
 import static com.codeborne.selenide.Selectors.byText;
@@ -29,8 +26,12 @@ public class ACalculationChKOTest {
     @BeforeClass
     public static void setup() {
         timeout = 40000;
-        baseUrl = "http://10.10.17.50:8080/barsroot/account/login/";
+        baseUrl = "http://10.10.17.22:8080/barsroot";
+//        baseUrl = "http://10.10.17.50:8080/barsroot/account/login/";
+//        baseUrl = "http://10.10.17.40:8080/barsroot/account/login/";
+//        baseUrl = "http://10.10.17.40:8082/barsroot/account/login/";
         browser = "ie";
+//        System.setProperty("webdriver.ie.driver", ".\\IEDriverServer.exe");
         InternetExplorerDriverManager.getInstance(DriverManagerType.IEXPLORER).arch32().setup();
         open("/");
     }
@@ -51,7 +52,6 @@ public class ACalculationChKOTest {
         switchTo().frame($("#mainFrame"));
         $(By.xpath("(//*[@class='x-grid-cell-inner x-grid-cell-inner-row-numberer'])[text()='2']")).shouldBe(visible).click();
         String OverdraftLimWindow = getWebDriver().getWindowHandle();
-        final Set<String> oldWindowsSet = getWebDriver().getWindowHandles();
         $(By.xpath("//*[@class='x-btn-icon-el INSERT ']")).shouldBe(visible).click();
         for(String windowsHandls : getWebDriver().getWindowHandles()) {
             if(!windowsHandls.equals(OverdraftLimWindow)){
