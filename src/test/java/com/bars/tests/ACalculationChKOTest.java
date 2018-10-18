@@ -3,11 +3,13 @@ package com.bars.tests;
 import com.codeborne.selenide.CollectionCondition;
 import com.codeborne.selenide.SelenideElement;
 import com.codeborne.selenide.junit.ScreenShooter;
+import com.codeborne.selenide.junit.TextReport;
 import io.github.bonigarcia.wdm.DriverManagerType;
 import io.github.bonigarcia.wdm.InternetExplorerDriverManager;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.TestRule;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import java.util.List;
@@ -21,7 +23,9 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class ACalculationChKOTest {
     @Rule
-    public ScreenShooter screenShooter = ScreenShooter.failedTests();
+    public ScreenShooter screenShooter = ScreenShooter.failedTests().to("test-results/reports");
+    @Rule
+    public TestRule report = new TextReport().onFailedTest(true).onSucceededTest(false);
 
     @BeforeClass
     public static void setup() {
