@@ -30,8 +30,8 @@ public class ACalculationChKOTest {
     @BeforeClass
     public static void setup() {
         timeout = 40000;
-        baseUrl = "http://10.10.17.22:8080/barsroot";
-//        baseUrl = "http://10.10.17.50:8080/barsroot/account/login/";
+//        baseUrl = "http://10.10.17.22:8080/barsroot";
+        baseUrl = "http://10.10.17.50:8080/barsroot/account/login/";
 //        baseUrl = "http://10.10.17.40:8080/barsroot/account/login/";
 //        baseUrl = "http://10.10.17.40:8082/barsroot/account/login/";
         browser = "ie";
